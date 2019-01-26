@@ -1,0 +1,132 @@
+
+        #form-section{
+            display: flex;
+            background-image: url(cover-589514_1920.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0% auto;
+            max-width: 1140px;
+        }
+        #form-reserve{
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            background-color: rgba(255, 255, 255, 0.92);
+            justify-content: space-around;
+        }
+        #form-reserve span{ 
+            font-size: 1.3rem; 
+            flex: 4;          
+            font-weight: 600;
+            color: #1d4ec1;
+        }
+        
+        #form-reserve input{
+            flex: 8;
+            outline: none;
+            transition: 0.5s;
+            border: none;
+            background-color: transparent;
+            box-shadow: inset 0px -5px 2px -4px black;
+        }
+        
+        #form-reserve div{
+            padding: 0rem 2.5rem;
+            display: flex;
+        }
+        #form-reserve h4{
+            font-size: 1.3rem;
+            margin: 0px;
+            line-height: unset;
+        }
+        #form-reserve input:focus{
+            color: aliceblue;
+            background: #0000004f;
+            box-shadow: inset 0px -5px 2px -4px black, 0px 0px 10px #000000a6;
+        }
+        @media(max-width:1200px){
+            #form-reserve div{
+                padding: 0px 1.5rem;
+            }
+            #form-reserve span{
+                font-size: 1rem;
+                flex: 10;
+            }
+            #form-reserve h4{font-size: 1rem}
+            #form-section{
+                max-width: 960px;
+            }
+        }
+        @media(max-width:992px){
+            #form-section{
+                flex-direction: column;
+                max-width: 720px;
+            }
+            #form-reserve{
+                width: 100%;
+            }
+            #form-reserve div{
+                padding: 1rem 1.5rem;
+            }
+            #form-reserve span{flex: 2;}
+        }
+        @media(max-width:768px){
+            #form-section{
+                max-width: 100%;
+            }
+            #form-reserve span{flex: 3;}
+        }
+        #D_R-location{    
+            background-color: rgba(255, 255, 255, 0.92);       
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+        #D_R-location span{
+            text-align: center;
+            font-size: 2rem;
+            padding: 1rem;
+        }
+        #D_R-location img{
+            width: 100%;
+        }
+        #reserve_Day select{
+            outline: none;
+            flex: 2;
+            font-size: 1.2rem;
+            border: none;
+            background: transparent;
+            text-align-last: center;
+            
+        }
+        #reserve_submit{
+            width: 40%;
+            box-shadow: 0px 0px 10px #efe2ca;
+            background: #f5deb38a;
+            border: none;
+            padding: 0.5rem 0rem;
+            margin: 0rem 2rem;
+            margin-left: auto;
+            transition: 0.3s;
+        }
+        @media(max-width:1200px){
+            #reserve_submit{
+                margin: 0px auto;
+                padding: 0.2rem 0rem;
+            }
+        }
+        @media(max-width:992px){
+            #D_R-location{
+                width: 100%;
+            }
+            #reserve_submit{
+                margin: 1rem auto;
+            }
+        } 
+        #reserve_submit:hover,#reserve_submit:focus{
+            cursor: pointer;
+            outline: none;
+            box-shadow: 0px 0px 10px #90723b8a;
+            background: #bd903b5e;
+        }

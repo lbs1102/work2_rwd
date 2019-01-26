@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="main-section.css">
+    <link rel="stylesheet" href="forms1.css">
+    <style>
+        /* * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        } */
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none !important;
+            color: inherit !important;
+        }
+        
+        article {
+            background: linear-gradient(38deg, rgba(128, 100, 90, 1)0%, rgba(235, 218, 204, 0.8)100%); 
+            padding: 5rem 0rem;
+        }
+        article section{
+            margin: 5rem auto;
+            
+        }
+        /* header part */
+        #head_fiex_bar {
+            flex-wrap: wrap;
+            color: white;
+            /* top: -100%; */
+            transform: translateY(-100%);
+            display: flex;
+            width: 100%;
+            margin: 0px auto;
+            position: fixed;
+            z-index: 99;
+            background-color: #0000004f;
+            transition: 0.3s ease-in-out;
+        }
+
+        #head_fiex_bar.show {
+            /* top: 0%; */
+            transform: translateY(0%);
+        }
+
+        #head_fiex_bar h1 {
+            text-align: center;
+            flex: 1;
+            font-size: 3rem
+        }
+
+        #head_bar_button {
+            padding: 7px 10px;
+            justify-content: flex-end;
+            flex: 1;
+            display: none;
+        }
+
+        #head_bar_button div {
+            padding: 5%;
+            cursor: pointer;
+            justify-content: space-around;
+            flex-direction: column;
+            height: 100%;
+            width: 2rem;
+            display: flex;
+        }
+
+        #head_bar_button span {
+            width: 100%;
+            border: 1px solid white;
+            border-radius: 1px;
+        }
+
+        #head_bar {
+            padding: 0px;
+            margin: 0px;
+            flex: 2;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #head_bar li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            font-size: 1.5rem;
+        }
+
+        @media(max-width:1200px) {
+            #head_fiex_bar h1 {
+                flex: 2;
+            }
+        }
+
+        @media(max-width:992px) {
+            #head_fiex_bar h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media(max-width:576px) {
+            #head_bar {
+                opacity: 0;
+                transition:transform 0.5s ;
+                transform-origin: top;
+                transform: scaleY(0);
+                background: #0000004f;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                flex-direction: column;
+            }
+
+            #head_bar.show {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+
+            #head_bar_button.show {
+                display: flex;
+                min-width: 30%;
+            }
+
+            #head_fiex_bar h1 {
+                min-width: 70%;
+                font-size: 2rem;
+            }
+        }
+
+        /* section part */
+        #page_head {
+            background-image: url(page.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100Vh;
+            position: relative;
+        }
+
+        #page_head_introduce {
+            background-color: #0000004f;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0px 20px 20px #0000004f;
+        }
+
+        #page_head_introduce div {
+            margin: 0px auto;
+            width: 60%;
+            text-align: center;
+            color: white;
+            padding: 2% 0px;
+        }
+
+        #page_head_introduce h1 {
+            font-size: 4rem;
+        }
+
+        #page_head_bar {
+            justify-content: space-around;
+            display: flex;
+        }
+
+        #page_head_bar li {
+            font-size: 2rem;
+        }
+
+        @media(max-width:992px) {
+            #page_head_introduce h1 {
+                font-size: 3rem;
+            }
+
+            #page_head_bar li {
+                font-size: 1.5rem;
+            }
+
+        }
+
+        @media(max-width:576px) {
+            #page_head_introduce h1 {
+                font-size: 2rem;
+            }
+
+            #page_head_bar li {
+                font-size: 1rem;
+            }
+
+        }
+        
+    </style>
+    <script>
+        window.onload = function () {
+            var head_fiex_bar = document.querySelector("#head_fiex_bar");
+            window.addEventListener("scroll", () => { (this.scrollY > (this.innerHeight / 2)) ? head_fiex_bar.classList.add("show") : head_fiex_bar.classList.remove("show") })
+
+            //head_bar_btn
+            var head_bar_button = document.querySelector("#head_bar_button");
+            var head_bar = document.querySelector("#head_bar");
+            head_bar_button.childNodes[1].addEventListener("click", () => head_bar.classList.toggle("show"));
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div id="head_fiex_bar">
+            <h1><a href="#">POWER POINT</a></h1>
+            <div id="head_bar_button" class="show">
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <ul id="head_bar">
+                <li><a href="#">about us</a></li>
+                <li><a href="#">menu</a></li>
+                <li><a href="#">location</a></li>
+            </ul>
+        </div>
+        <div id="page_head">
+            <div id="page_head_introduce">
+                <div>
+                    <ul id="page_head_bar">
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">menu</a></li>
+                        <li><a href="#">location</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h1><a href="#">POWER POINT</a></h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <article>
+
+        <section id="main-section" class="container">
+            <h1 class="section-part">POWER YOU POINT</h1>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="http://img02.tooopen.com/images/20160601/tooopen_sy_163945188585.jpg"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the
+                                bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="https://c-lj.gnst.jp/public/article/detail/a/00/00/a0000441/img/basic/a0000441_main.jpg?20170429125116"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the
+                                bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="https://images-news.now.com/newsimage/NewsImage/2018-05-10-16-33-22kYqoGt6y.jpg"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the
+                                bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="lead section-part">lorem ipsum dolor sit amet,constetuer</P>
+        </section>
+        <section>
+            <div id="form-section">
+                <form action="" id="form-reserve">
+                    <div>
+                        <span>姓名</span>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <span>訂位人數</span>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <span>電話</span>
+                        <input type="text">
+                    </div>
+
+                    <div id="reserve_Day">
+                        <span>日期</span>
+                        <select name="month" class="reserve">
+                        </select>
+                        <h4>月</h4>
+                        <select name="day" class="reserve">
+                        </select>
+                        <h4>日</h4>
+                        <select name="time" class="reserve">
+                        </select>
+                    </div>
+                    <button type="submit" id="reserve_submit">送出</button>
+                </form>
+                <div id="D_R-location">
+                    <span>Location</span>
+                    <div id="D_R-location_img">
+                        <img src="mapsample.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </article>
+
+
+
+
+
+
+
+    <script src="reserve_data.js"></script>
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
